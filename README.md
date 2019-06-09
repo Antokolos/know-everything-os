@@ -15,6 +15,7 @@ The game uses several open-source libraries for Godot:
 
 Also this game can help you with:
 * Creating user interfaces with Godot engine
+* Translating your game to the different languages using the Godot way to do this (interface.csv file containing the translations of the UI elements)
 * Using GDNative libraries in your project
 * Creating particle effects (such as fireworks)
 * Using controller in your game
