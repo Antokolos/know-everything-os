@@ -207,6 +207,9 @@ func init_database():
 		language.set_item_icon(i, texture)
 		language.set_item_metadata(i, lang)
 		i = i + 1
+	# The following line is needed to force the selection operation to be executed even if
+	# the corresponding language is already selected (without it, the item image is not displayed for item #0)
+	language.select(1)
 	language.select(lang_to_select)
 	_on_OptionLanguage_item_selected(lang_to_select)
 	
