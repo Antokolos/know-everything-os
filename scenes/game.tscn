@@ -1,0 +1,765 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/game.gd" type="Script" id=2]
+[ext_resource path="res://styles/life_full.tres" type="StyleBox" id=3]
+[ext_resource path="res://styles/score_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/images/quit_quiz_normal.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/quit_quiz_hover.png" type="Texture" id=6]
+[ext_resource path="res://styles/dark_outer.tres" type="StyleBox" id=7]
+[ext_resource path="res://styles/dark_inner.tres" type="StyleBox" id=8]
+[ext_resource path="res://styles/question_font.tres" type="DynamicFont" id=9]
+[ext_resource path="res://styles/answer_text.tres" type="StyleBox" id=10]
+[ext_resource path="res://styles/answer_font.tres" type="DynamicFont" id=11]
+[ext_resource path="res://styles/respondent_font.tres" type="DynamicFont" id=12]
+[ext_resource path="res://sound/wrong.wav" type="AudioStream" id=13]
+[ext_resource path="res://sound/correct.wav" type="AudioStream" id=14]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.137255, 0.117647, 0.117647, 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "modulate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/VBoxContainer/HBoxAnswers1/Panel/Panel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0352941, 0.0352941, 0.0901961, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0352941, 0.0352941, 0.0901961, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Panel/VBoxContainer/HBoxAnswers2/Panel/Panel:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0352941, 0.0352941, 0.0901961, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0352941, 0.0352941, 0.0901961, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="game" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 10.0
+margin_right = -100.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PanelLives" type="Control" parent="Panel/VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 80, 100 )
+size_flags_horizontal = 9
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="HBoxLives" type="HBoxContainer" parent="Panel/VBoxContainer/PanelLives"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = -7.0
+margin_bottom = 7.0
+
+[node name="VBoxPlayerLives" type="VBoxContainer" parent="Panel/VBoxContainer/PanelLives/HBoxLives"]
+margin_right = 256.0
+margin_bottom = 100.0
+
+[node name="LabelPlayerName" type="Label" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxPlayerLives"]
+margin_right = 256.0
+margin_bottom = 38.0
+
+[node name="HBoxLives" type="HBoxContainer" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxPlayerLives"]
+margin_top = 42.0
+margin_right = 256.0
+margin_bottom = 90.0
+
+[node name="Life1" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxPlayerLives/HBoxLives"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Life2" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxPlayerLives/HBoxLives"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Life3" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxPlayerLives/HBoxLives"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Life4" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxPlayerLives/HBoxLives"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Life5" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxPlayerLives/HBoxLives"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="VBoxInfo" type="VBoxContainer" parent="Panel/VBoxContainer/PanelLives/HBoxLives"]
+margin_left = 260.0
+margin_right = 806.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxScore" type="HBoxContainer" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo"]
+margin_right = 546.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PlayerScoreLabel" type="Label" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo/HBoxScore"]
+margin_right = 245.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+custom_fonts/font = ExtResource( 4 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxQuit" type="HBoxContainer" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo/HBoxScore"]
+margin_left = 249.0
+margin_right = 297.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="VBoxQuit" type="VBoxContainer" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo/HBoxScore/HBoxQuit"]
+margin_right = 48.0
+margin_bottom = 58.0
+alignment = 1
+
+[node name="ButtonQuit" type="TextureButton" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo/HBoxScore/HBoxQuit/VBoxQuit"]
+margin_top = 5.0
+margin_right = 48.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 48, 48 )
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+
+[node name="OpponentScoreLabel" type="Label" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo/HBoxScore"]
+margin_left = 301.0
+margin_right = 546.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 10.0
+custom_fonts/font = ExtResource( 4 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxTimer" type="HBoxContainer" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo"]
+margin_top = 62.0
+margin_right = 546.0
+margin_bottom = 100.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+alignment = 1
+
+[node name="LabelReward" type="Label" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo/HBoxTimer"]
+margin_right = 50.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 50, 0 )
+align = 1
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo/HBoxTimer"]
+self_modulate = Color( 0, 1, 0, 1 )
+margin_left = 54.0
+margin_top = 14.0
+margin_right = 546.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+step = 0.0
+value = 100.0
+percent_visible = false
+
+[node name="VBoxOpponentLives" type="VBoxContainer" parent="Panel/VBoxContainer/PanelLives/HBoxLives"]
+editor/display_folded = true
+margin_left = 810.0
+margin_right = 1066.0
+margin_bottom = 100.0
+
+[node name="LabelOpponentName" type="Label" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxOpponentLives"]
+margin_right = 256.0
+margin_bottom = 38.0
+align = 2
+
+[node name="HBoxLives" type="HBoxContainer" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxOpponentLives"]
+margin_top = 42.0
+margin_right = 256.0
+margin_bottom = 90.0
+alignment = 2
+
+[node name="Life1" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxOpponentLives/HBoxLives"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Life2" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxOpponentLives/HBoxLives"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Life3" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxOpponentLives/HBoxLives"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Life4" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxOpponentLives/HBoxLives"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Life5" type="Panel" parent="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxOpponentLives/HBoxLives"]
+margin_left = 208.0
+margin_right = 256.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+custom_styles/panel = ExtResource( 3 )
+
+[node name="HBoxQuestion" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 104.0
+margin_right = 1080.0
+margin_bottom = 404.0
+rect_min_size = Vector2( 180, 180 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+alignment = 1
+
+[node name="TextPanel" type="Panel" parent="Panel/VBoxContainer/HBoxQuestion"]
+margin_right = 807.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+custom_styles/panel = ExtResource( 7 )
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxQuestion/TextPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 8 )
+
+[node name="QuizText" type="Label" parent="Panel/VBoxContainer/HBoxQuestion/TextPanel/Panel"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+margin_left = 0.900009
+margin_top = -25.8
+margin_right = -0.899902
+margin_bottom = 25.8
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="MediaPanel" type="Panel" parent="Panel/VBoxContainer/HBoxQuestion"]
+margin_left = 811.0
+margin_right = 1080.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 7 )
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxQuestion/MediaPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxQuestion/MediaPanel/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 248, 248 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6
+
+[node name="HBoxAnswers1" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 408.0
+margin_right = 1080.0
+margin_bottom = 568.0
+rect_min_size = Vector2( 160, 160 )
+size_flags_stretch_ratio = 0.6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxAnswers1"]
+margin_right = 538.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 7 )
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxAnswers1/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+custom_styles/panel = ExtResource( 8 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxAnswers1/Panel/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Answer1" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel/Panel/VBoxContainer"]
+margin_right = 528.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 110, 106 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxAnswers1/Panel/Panel/VBoxContainer"]
+margin_top = 110.0
+margin_right = 528.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 56, 40 )
+size_flags_vertical = 4
+
+[node name="LabelPlayer" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel/Panel/VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 173.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+
+[node name="LabelGamepadHint" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel/Panel/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 177.0
+margin_top = 3.0
+margin_right = 350.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "[LB]"
+align = 1
+
+[node name="LabelOpponent" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel/Panel/VBoxContainer/HBoxContainer"]
+margin_left = 354.0
+margin_top = 3.0
+margin_right = 528.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 2
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/HBoxAnswers1"]
+margin_left = 542.0
+margin_right = 1080.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 7 )
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxAnswers1/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+custom_styles/panel = ExtResource( 8 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Answer2" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel/VBoxContainer"]
+margin_right = 528.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 110, 106 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel/VBoxContainer"]
+margin_top = 110.0
+margin_right = 528.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 56, 40 )
+size_flags_vertical = 4
+
+[node name="LabelPlayer" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel/VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 173.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+
+[node name="LabelGamepadHint" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 177.0
+margin_top = 3.0
+margin_right = 350.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "[RB]"
+align = 1
+
+[node name="LabelOpponent" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel/VBoxContainer/HBoxContainer"]
+margin_left = 354.0
+margin_top = 3.0
+margin_right = 528.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 2
+
+[node name="HBoxAnswers2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 572.0
+margin_right = 1080.0
+margin_bottom = 732.0
+rect_min_size = Vector2( 160, 160 )
+size_flags_stretch_ratio = 0.6
+alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxAnswers2"]
+margin_right = 538.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 7 )
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxAnswers2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+custom_styles/panel = ExtResource( 8 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxAnswers2/Panel/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+
+[node name="Answer3" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel/Panel/VBoxContainer"]
+margin_right = 528.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 110, 106 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxAnswers2/Panel/Panel/VBoxContainer"]
+margin_top = 110.0
+margin_right = 528.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 56, 40 )
+size_flags_vertical = 4
+
+[node name="LabelPlayer" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel/Panel/VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 173.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+
+[node name="LabelGamepadHint" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel/Panel/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 177.0
+margin_top = 3.0
+margin_right = 350.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "[LT]"
+align = 1
+
+[node name="LabelOpponent" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel/Panel/VBoxContainer/HBoxContainer"]
+margin_left = 354.0
+margin_top = 3.0
+margin_right = 528.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 2
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/HBoxAnswers2"]
+margin_left = 542.0
+margin_right = 1080.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 7 )
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxAnswers2/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+custom_styles/panel = ExtResource( 8 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+
+[node name="Answer4" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel/VBoxContainer"]
+margin_right = 528.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 110, 106 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel/VBoxContainer"]
+margin_top = 110.0
+margin_right = 528.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 56, 40 )
+size_flags_vertical = 4
+
+[node name="LabelPlayer" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel/VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 173.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+
+[node name="LabelGamepadHint" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 177.0
+margin_top = 3.0
+margin_right = 350.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "[RT]"
+align = 1
+
+[node name="LabelOpponent" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel/VBoxContainer/HBoxContainer"]
+margin_left = 354.0
+margin_top = 3.0
+margin_right = 528.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 10 )
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 2
+
+[node name="HBoxConfirm" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 736.0
+margin_right = 1080.0
+margin_bottom = 780.0
+rect_min_size = Vector2( 44, 44 )
+size_flags_stretch_ratio = 0.2
+alignment = 1
+
+[node name="Panel" type="Control" parent="Panel/VBoxContainer/HBoxConfirm"]
+margin_right = 538.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+
+[node name="category" type="Label" parent="Panel/VBoxContainer/HBoxConfirm/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+valign = 1
+autowrap = true
+
+[node name="Confirm" type="Button" parent="Panel/VBoxContainer/HBoxConfirm"]
+visible = false
+margin_left = 232.0
+margin_right = 368.0
+margin_bottom = 40.0
+text = "GAME_CONFIRM"
+
+[node name="Next" type="Button" parent="Panel/VBoxContainer/HBoxConfirm"]
+visible = false
+margin_left = 317.0
+margin_right = 422.0
+margin_bottom = 40.0
+text = "GAME_NEXT"
+
+[node name="Panel2" type="Control" parent="Panel/VBoxContainer/HBoxConfirm"]
+margin_left = 542.0
+margin_right = 1080.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+
+[node name="quiz_number" type="Label" parent="Panel/VBoxContainer/HBoxConfirm/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+align = 2
+valign = 1
+autowrap = true
+
+[node name="PlayerWrong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+bus = "Effects"
+
+[node name="PlayerCorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+bus = "Effects"
+
+[node name="AnswerAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/modulate = SubResource( 4 )
+[connection signal="pressed" from="Panel/VBoxContainer/PanelLives/HBoxLives/VBoxInfo/HBoxScore/HBoxQuit/VBoxQuit/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
+[connection signal="gui_input" from="Panel/VBoxContainer/HBoxAnswers1/Panel/Panel/VBoxContainer" to="." method="_on_Answer1_gui_input"]
+[connection signal="gui_input" from="Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel/VBoxContainer" to="." method="_on_Answer2_gui_input"]
+[connection signal="gui_input" from="Panel/VBoxContainer/HBoxAnswers2/Panel/Panel/VBoxContainer" to="." method="_on_Answer3_gui_input"]
+[connection signal="gui_input" from="Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel/VBoxContainer" to="." method="_on_Answer4_gui_input"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxConfirm/Confirm" to="." method="_on_Confirm_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxConfirm/Next" to="." method="_on_Next_pressed"]

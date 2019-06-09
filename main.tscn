@@ -1,0 +1,213 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://main.gd" type="Script" id=2]
+[ext_resource path="res://styles/header2_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://styles/header_font.tres" type="DynamicFont" id=4]
+
+[node name="main" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="VBoxMain" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxLanguage" type="HBoxContainer" parent="VBoxMain"]
+margin_right = 1280.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+custom_constants/separation = 16
+alignment = 1
+
+[node name="MarginStubLeft" type="Control" parent="VBoxMain/HBoxLanguage"]
+margin_bottom = 61.0
+
+[node name="HBoxRules" type="HBoxContainer" parent="VBoxMain/HBoxLanguage"]
+margin_left = 16.0
+margin_right = 549.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="Rules" type="Button" parent="VBoxMain/HBoxLanguage/HBoxRules"]
+margin_top = 6.0
+margin_right = 215.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 150, 48 )
+size_flags_vertical = 4
+text = "MENU_RULES"
+
+[node name="Editor" type="Button" parent="VBoxMain/HBoxLanguage/HBoxRules"]
+visible = false
+margin_left = 219.0
+margin_top = 4.0
+margin_right = 449.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 150, 48 )
+size_flags_vertical = 4
+text = "MENU_EDITOR"
+
+[node name="VBoxLanguage" type="VBoxContainer" parent="VBoxMain/HBoxLanguage"]
+margin_left = 565.0
+margin_right = 715.0
+margin_bottom = 61.0
+alignment = 1
+
+[node name="OptionLanguage" type="OptionButton" parent="VBoxMain/HBoxLanguage/VBoxLanguage"]
+margin_top = 8.0
+margin_right = 150.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 150, 32 )
+custom_fonts/font = ExtResource( 3 )
+
+[node name="HBoxVersion" type="HBoxContainer" parent="VBoxMain/HBoxLanguage"]
+editor/display_folded = true
+margin_left = 731.0
+margin_right = 1264.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxMain/HBoxLanguage/HBoxVersion"]
+margin_left = 455.0
+margin_top = 11.0
+margin_right = 533.0
+margin_bottom = 49.0
+text = "v. 1.0"
+align = 1
+valign = 1
+
+[node name="MarginStubRight" type="Control" parent="VBoxMain/HBoxLanguage"]
+margin_left = 1280.0
+margin_right = 1280.0
+margin_bottom = 61.0
+
+[node name="HBoxHeader" type="HBoxContainer" parent="VBoxMain"]
+margin_top = 65.0
+margin_right = 1280.0
+margin_bottom = 179.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxMain/HBoxHeader"]
+margin_left = 348.0
+margin_right = 931.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 4 )
+text = "GAME_NAME"
+
+[node name="VBoxGreeting" type="VBoxContainer" parent="VBoxMain"]
+margin_top = 183.0
+margin_right = 1280.0
+margin_bottom = 305.0
+alignment = 1
+
+[node name="LabelName" type="Label" parent="VBoxMain/VBoxGreeting"]
+margin_right = 1280.0
+margin_bottom = 38.0
+align = 1
+
+[node name="LabelStatsSingle" type="Label" parent="VBoxMain/VBoxGreeting"]
+margin_top = 42.0
+margin_right = 1280.0
+margin_bottom = 80.0
+align = 1
+
+[node name="LabelStatsMulti" type="Label" parent="VBoxMain/VBoxGreeting"]
+margin_top = 84.0
+margin_right = 1280.0
+margin_bottom = 122.0
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxMain"]
+margin_top = 309.0
+margin_right = 1280.0
+margin_bottom = 800.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+alignment = 1
+
+[node name="HBoxMenu" type="HBoxContainer" parent="VBoxMain/VBoxContainer"]
+margin_top = 39.0
+margin_right = 1280.0
+margin_bottom = 451.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxMain/VBoxContainer/HBoxMenu"]
+margin_left = 460.0
+margin_right = 820.0
+margin_bottom = 412.0
+rect_min_size = Vector2( 150, 100 )
+alignment = 1
+
+[node name="StartGame" type="Button" parent="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer"]
+margin_right = 360.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 150, 48 )
+text = "MENU_START_GAME"
+
+[node name="JoinGame" type="Button" parent="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer"]
+margin_top = 52.0
+margin_right = 360.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 150, 48 )
+text = "MENU_JOIN_GAME"
+
+[node name="Leaderboards" type="Button" parent="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer"]
+margin_top = 104.0
+margin_right = 360.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 150, 48 )
+text = "MENU_LEADERBOARDS"
+
+[node name="Stats" type="Button" parent="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer"]
+margin_top = 156.0
+margin_right = 360.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 150, 48 )
+text = "MENU_STATS"
+
+[node name="Settings" type="Button" parent="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer"]
+margin_top = 208.0
+margin_right = 360.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 150, 48 )
+text = "MENU_SETTINGS"
+
+[node name="Credits" type="Button" parent="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer"]
+margin_top = 260.0
+margin_right = 360.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 150, 48 )
+text = "MENU_CREDITS"
+
+[node name="About" type="Button" parent="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer"]
+margin_top = 312.0
+margin_right = 360.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 150, 48 )
+text = "MENU_ABOUT"
+
+[node name="Quit" type="Button" parent="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer"]
+margin_top = 364.0
+margin_right = 360.0
+margin_bottom = 412.0
+rect_min_size = Vector2( 150, 48 )
+text = "MENU_QUIT"
+[connection signal="pressed" from="VBoxMain/HBoxLanguage/HBoxRules/Rules" to="." method="_on_Rules_pressed"]
+[connection signal="pressed" from="VBoxMain/HBoxLanguage/HBoxRules/Editor" to="." method="_on_Editor_pressed"]
+[connection signal="item_selected" from="VBoxMain/HBoxLanguage/VBoxLanguage/OptionLanguage" to="." method="_on_OptionLanguage_item_selected"]
+[connection signal="pressed" from="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer/StartGame" to="." method="_on_Game_pressed"]
+[connection signal="pressed" from="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer/JoinGame" to="." method="_on_JoinGame_pressed"]
+[connection signal="pressed" from="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer/Leaderboards" to="." method="_on_Leaderboards_pressed"]
+[connection signal="pressed" from="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer/Stats" to="." method="_on_Stats_pressed"]
+[connection signal="pressed" from="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer/About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="VBoxMain/VBoxContainer/HBoxMenu/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

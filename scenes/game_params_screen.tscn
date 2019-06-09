@@ -1,0 +1,192 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/game_params_screen.gd" type="Script" id=2]
+[ext_resource path="res://styles/button_pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://styles/button_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://styles/questions_count_group.tres" type="ButtonGroup" id=5]
+
+[node name="game_params_screen" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="QCLabel" type="Label" parent="VBoxContainer"]
+margin_top = 169.0
+margin_right = 1280.0
+margin_bottom = 219.0
+rect_min_size = Vector2( 100, 50 )
+text = "PARAMS_QUESTIONS_COUNT"
+align = 1
+valign = 1
+
+[node name="HBoxQuestionsCount" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 223.0
+margin_right = 1280.0
+margin_bottom = 323.0
+alignment = 1
+
+[node name="CountLow" type="Button" parent="VBoxContainer/HBoxQuestionsCount"]
+margin_left = 486.0
+margin_right = 586.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+toggle_mode = true
+group = ExtResource( 5 )
+text = "L"
+
+[node name="CountNormal" type="Button" parent="VBoxContainer/HBoxQuestionsCount"]
+margin_left = 590.0
+margin_right = 690.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+toggle_mode = true
+pressed = true
+group = ExtResource( 5 )
+text = "N"
+
+[node name="CountHigh" type="Button" parent="VBoxContainer/HBoxQuestionsCount"]
+margin_left = 694.0
+margin_right = 794.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+toggle_mode = true
+group = ExtResource( 5 )
+text = "H"
+
+[node name="CatLabel" type="Label" parent="VBoxContainer"]
+margin_top = 327.0
+margin_right = 1280.0
+margin_bottom = 377.0
+rect_min_size = Vector2( 100, 50 )
+text = "PARAMS_CATEGORIES"
+align = 1
+valign = 1
+
+[node name="HBoxCategories" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 381.0
+margin_right = 1280.0
+margin_bottom = 455.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxCategories"]
+margin_left = 183.0
+margin_right = 1096.0
+margin_bottom = 74.0
+
+[node name="HBoxSpecialCategories" type="HBoxContainer" parent="VBoxContainer/HBoxCategories/VBoxContainer"]
+margin_right = 913.0
+margin_bottom = 70.0
+alignment = 1
+
+[node name="CategoryAll" type="Button" parent="VBoxContainer/HBoxCategories/VBoxContainer/HBoxSpecialCategories"]
+margin_right = 415.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 340, 70 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+toggle_mode = true
+pressed = true
+text = "PARAMS_CATEGORIES_ALL"
+
+[node name="CategoryRandom" type="Button" parent="VBoxContainer/HBoxCategories/VBoxContainer/HBoxSpecialCategories"]
+margin_left = 419.0
+margin_right = 913.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 340, 70 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+toggle_mode = true
+text = "PARAMS_CATEGORIES_RANDOM"
+
+[node name="GridCustomCategories" type="GridContainer" parent="VBoxContainer/HBoxCategories/VBoxContainer"]
+margin_top = 74.0
+margin_right = 913.0
+margin_bottom = 74.0
+columns = 3
+
+[node name="OpponentLabel" type="Label" parent="VBoxContainer"]
+margin_top = 459.0
+margin_right = 1280.0
+margin_bottom = 509.0
+rect_min_size = Vector2( 100, 50 )
+text = "PARAMS_OPPONENT"
+align = 1
+valign = 1
+
+[node name="HBoxOpponent" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 513.0
+margin_right = 1280.0
+margin_bottom = 557.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="OptionOpponent" type="OptionButton" parent="VBoxContainer/HBoxOpponent"]
+margin_left = 123.0
+margin_right = 453.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 330, 25 )
+size_flags_horizontal = 4
+
+[node name="HBoxLobbyType" type="HBoxContainer" parent="VBoxContainer/HBoxOpponent"]
+margin_left = 483.0
+margin_right = 1156.0
+margin_bottom = 44.0
+
+[node name="LabelLobbyType" type="Label" parent="VBoxContainer/HBoxOpponent/HBoxLobbyType"]
+margin_top = 3.0
+margin_right = 339.0
+margin_bottom = 41.0
+text = "PARAMS_LOBBY_TYPE"
+
+[node name="OptionLobbyType" type="OptionButton" parent="VBoxContainer/HBoxOpponent/HBoxLobbyType"]
+margin_left = 343.0
+margin_right = 673.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 330, 25 )
+size_flags_horizontal = 4
+disabled = true
+
+[node name="HBoxActions" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 561.0
+margin_right = 1280.0
+margin_bottom = 631.0
+rect_min_size = Vector2( 100, 70 )
+alignment = 1
+
+[node name="Start" type="Button" parent="VBoxContainer/HBoxActions"]
+margin_left = 389.0
+margin_top = 10.0
+margin_right = 647.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "PARAMS_START"
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxActions"]
+margin_left = 651.0
+margin_top = 10.0
+margin_right = 891.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "PARAMS_BACK"
+[connection signal="pressed" from="VBoxContainer/HBoxCategories/VBoxContainer/HBoxSpecialCategories/CategoryAll" to="." method="_on_CategoryAll_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxCategories/VBoxContainer/HBoxSpecialCategories/CategoryRandom" to="." method="_on_CategoryRandom_pressed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxOpponent/OptionOpponent" to="." method="_on_OptionOpponent_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxOpponent/HBoxLobbyType/OptionLobbyType" to="." method="_on_OptionLobbyType_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxActions/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxActions/Back" to="." method="_on_Back_pressed"]

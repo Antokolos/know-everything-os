@@ -1,0 +1,226 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/screen_leaderboards.gd" type="Script" id=2]
+[ext_resource path="res://styles/header_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://styles/header2_font.tres" type="DynamicFont" id=4]
+
+[node name="screen_leaderboards" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="HBoxHeader" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 40.0
+margin_right = 2166.0
+margin_bottom = 154.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxHeader"]
+margin_left = 522.0
+margin_right = 1644.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 100, 70 )
+custom_fonts/font = ExtResource( 3 )
+text = "LEADERBOARDS_HEADER"
+
+[node name="HBoxLeaderboards" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 158.0
+margin_right = 2166.0
+margin_bottom = 661.0
+alignment = 1
+
+[node name="VBoxSingleplayer" type="VBoxContainer" parent="VBoxContainer/HBoxLeaderboards"]
+margin_right = 1081.0
+margin_bottom = 503.0
+
+[node name="HeaderLabel" type="Label" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer"]
+margin_right = 1081.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 4 )
+align = 1
+valign = 1
+
+[node name="HBoxGridHeader" type="HBoxContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer"]
+editor/display_folded = true
+margin_top = 61.0
+margin_right = 1081.0
+margin_bottom = 99.0
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer/HBoxGridHeader"]
+editor/display_folded = true
+margin_right = 1081.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 600, 10 )
+columns = 3
+
+[node name="Rank" type="Label" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer/HBoxGridHeader/GridContainer"]
+margin_right = 341.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "LEADERBOARDS_RANK"
+align = 1
+
+[node name="Player" type="Label" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer/HBoxGridHeader/GridContainer"]
+margin_left = 345.0
+margin_right = 719.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "LEADERBOARDS_PLAYER"
+align = 1
+
+[node name="Score" type="Label" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer/HBoxGridHeader/GridContainer"]
+margin_left = 723.0
+margin_right = 1081.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "LEADERBOARDS_SCORE"
+align = 1
+
+[node name="HBoxGrid" type="HBoxContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer"]
+editor/display_folded = true
+margin_top = 103.0
+margin_right = 1081.0
+margin_bottom = 503.0
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer/HBoxGrid"]
+margin_left = 240.0
+margin_right = 840.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 600, 400 )
+scroll_horizontal_enabled = false
+
+[node name="StatsGrid" type="GridContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer/HBoxGrid/ScrollContainer"]
+margin_right = 600.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 600, 400 )
+columns = 3
+
+[node name="LeaderboardSingleUrl" type="RichTextLabel" parent="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer"]
+visible = false
+margin_top = 505.0
+margin_right = 1052.0
+margin_bottom = 545.0
+rect_min_size = Vector2( 400, 40 )
+size_flags_horizontal = 5
+size_flags_vertical = 4
+bbcode_enabled = true
+scroll_active = false
+
+[node name="VBoxMultiplayer" type="VBoxContainer" parent="VBoxContainer/HBoxLeaderboards"]
+margin_left = 1085.0
+margin_right = 2166.0
+margin_bottom = 503.0
+
+[node name="HeaderLabel" type="Label" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer"]
+margin_right = 1081.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 4 )
+align = 1
+valign = 1
+
+[node name="HBoxGridHeader" type="HBoxContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer"]
+margin_top = 61.0
+margin_right = 1081.0
+margin_bottom = 99.0
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer/HBoxGridHeader"]
+margin_right = 1081.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 600, 10 )
+columns = 3
+
+[node name="Rank" type="Label" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer/HBoxGridHeader/GridContainer"]
+margin_right = 341.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "LEADERBOARDS_RANK"
+align = 1
+
+[node name="Player" type="Label" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer/HBoxGridHeader/GridContainer"]
+margin_left = 345.0
+margin_right = 719.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "LEADERBOARDS_PLAYER"
+align = 1
+
+[node name="Score" type="Label" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer/HBoxGridHeader/GridContainer"]
+margin_left = 723.0
+margin_right = 1081.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "LEADERBOARDS_SCORE"
+align = 1
+
+[node name="HBoxGrid" type="HBoxContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer"]
+margin_top = 103.0
+margin_right = 1081.0
+margin_bottom = 503.0
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer/HBoxGrid"]
+margin_left = 240.0
+margin_right = 840.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 600, 400 )
+scroll_horizontal_enabled = false
+
+[node name="StatsGrid" type="GridContainer" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer/HBoxGrid/ScrollContainer"]
+margin_right = 600.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 600, 400 )
+columns = 3
+
+[node name="LeaderboardMultiUrl" type="RichTextLabel" parent="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer"]
+visible = false
+margin_top = 505.0
+margin_right = 1052.0
+margin_bottom = 545.0
+rect_min_size = Vector2( 400, 40 )
+size_flags_horizontal = 5
+size_flags_vertical = 4
+bbcode_enabled = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 665.0
+margin_right = 2166.0
+margin_bottom = 705.0
+rect_min_size = Vector2( 40, 40 )
+alignment = 1
+
+[node name="MessageWait" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_top = 1.0
+margin_right = 2166.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+text = "LEADERBOARDS_WAIT_MESSAGE"
+align = 1
+valign = 1
+
+[node name="HBoxControls" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 709.0
+margin_right = 2166.0
+margin_bottom = 759.0
+alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxControls"]
+margin_left = 907.0
+margin_right = 1258.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+text = "LEADERBOARDS_BACK"
+[connection signal="meta_clicked" from="VBoxContainer/HBoxLeaderboards/VBoxSingleplayer/LeaderboardSingleUrl" to="." method="_on_LeaderboardSingleUrl_meta_clicked"]
+[connection signal="meta_clicked" from="VBoxContainer/HBoxLeaderboards/VBoxMultiplayer/LeaderboardMultiUrl" to="." method="_on_LeaderboardMultiUrl_meta_clicked"]
+[connection signal="pressed" from="VBoxContainer/HBoxControls/Back" to="." method="_on_Back_pressed"]

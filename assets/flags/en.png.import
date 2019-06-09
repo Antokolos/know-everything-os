@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/en.png-33fb1f064fde852c74f8c8e4d2ac3d5e.image"
+
+[deps]
+
+source_file="res://assets/flags/en.png"
+dest_files=[ "res://.import/en.png-33fb1f064fde852c74f8c8e4d2ac3d5e.image" ]
+
+[params]
+

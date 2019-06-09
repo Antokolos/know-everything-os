@@ -1,0 +1,182 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/screen_stats.gd" type="Script" id=2]
+[ext_resource path="res://styles/header_font.tres" type="DynamicFont" id=3]
+
+[node name="screen_stats" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="HBoxHeader" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 92.0
+margin_right = 1623.0
+margin_bottom = 206.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxHeader"]
+margin_left = 462.0
+margin_right = 1161.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 100, 70 )
+custom_fonts/font = ExtResource( 3 )
+text = "STATS_HEADER"
+
+[node name="HBoxGameStats" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 210.0
+margin_right = 1623.0
+margin_bottom = 350.0
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxGameStats"]
+margin_left = 630.0
+margin_right = 993.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 300, 140 )
+columns = 2
+
+[node name="GamesPlayed" type="Label" parent="VBoxContainer/HBoxGameStats/GridContainer"]
+margin_right = 359.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "STATS_GAMES_PLAYED"
+align = 1
+
+[node name="GamesPlayedValue" type="Label" parent="VBoxContainer/HBoxGameStats/GridContainer"]
+margin_left = 363.0
+margin_right = 363.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+align = 1
+
+[node name="Wins" type="Label" parent="VBoxContainer/HBoxGameStats/GridContainer"]
+margin_top = 42.0
+margin_right = 359.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+text = "STATS_WINS"
+align = 1
+
+[node name="WinsValue" type="Label" parent="VBoxContainer/HBoxGameStats/GridContainer"]
+margin_left = 363.0
+margin_top = 42.0
+margin_right = 363.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+align = 1
+
+[node name="Losses" type="Label" parent="VBoxContainer/HBoxGameStats/GridContainer"]
+margin_top = 84.0
+margin_right = 359.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+text = "STATS_LOSSES"
+align = 1
+
+[node name="LossesValue" type="Label" parent="VBoxContainer/HBoxGameStats/GridContainer"]
+margin_left = 363.0
+margin_top = 84.0
+margin_right = 363.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+align = 1
+
+[node name="HBoxStats" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 354.0
+margin_right = 1623.0
+margin_bottom = 654.0
+alignment = 1
+
+[node name="StatsGrid" type="GridContainer" parent="VBoxContainer/HBoxStats"]
+margin_right = 1623.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 600, 300 )
+columns = 4
+
+[node name="Category" type="Label" parent="VBoxContainer/HBoxStats/StatsGrid"]
+margin_right = 352.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "STATS_CATEGORY"
+align = 1
+
+[node name="CorrectAnswers" type="Label" parent="VBoxContainer/HBoxStats/StatsGrid"]
+margin_left = 356.0
+margin_right = 779.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 270, 37 )
+size_flags_horizontal = 3
+text = "STATS_CORRECT_ANSWERS"
+align = 1
+
+[node name="IncorrectAnswers" type="Label" parent="VBoxContainer/HBoxStats/StatsGrid"]
+margin_left = 783.0
+margin_right = 1238.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 270, 37 )
+size_flags_horizontal = 3
+text = "STATS_INCORRECT_ANSWERS"
+align = 1
+
+[node name="TotalAnswers" type="Label" parent="VBoxContainer/HBoxStats/StatsGrid"]
+margin_left = 1242.0
+margin_right = 1623.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 270, 37 )
+size_flags_horizontal = 3
+text = "STATS_TOTAL_ANSWERS"
+align = 1
+
+[node name="CategoryAll" type="Label" parent="VBoxContainer/HBoxStats/StatsGrid"]
+margin_top = 42.0
+margin_right = 352.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+text = "STATS_CATEGORY_ALL"
+align = 1
+
+[node name="CorrectAnswersAll" type="Label" parent="VBoxContainer/HBoxStats/StatsGrid"]
+margin_left = 356.0
+margin_top = 42.0
+margin_right = 779.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+align = 1
+
+[node name="IncorrectAnswersAll" type="Label" parent="VBoxContainer/HBoxStats/StatsGrid"]
+margin_left = 783.0
+margin_top = 42.0
+margin_right = 1238.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+align = 1
+
+[node name="TotalAnswersAll" type="Label" parent="VBoxContainer/HBoxStats/StatsGrid"]
+margin_left = 1242.0
+margin_top = 42.0
+margin_right = 1623.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+align = 1
+
+[node name="HBoxControls" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 658.0
+margin_right = 1623.0
+margin_bottom = 708.0
+alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxControls"]
+margin_left = 707.0
+margin_right = 916.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+text = "STATS_BACK"
+[connection signal="pressed" from="VBoxContainer/HBoxControls/Back" to="." method="_on_Back_pressed"]

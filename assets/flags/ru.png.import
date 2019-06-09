@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/ru.png-f60d5f5bdd48b1967bf278ec2cd05c27.image"
+
+[deps]
+
+source_file="res://assets/flags/ru.png"
+dest_files=[ "res://.import/ru.png-f60d5f5bdd48b1967bf278ec2cd05c27.image" ]
+
+[params]
+

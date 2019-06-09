@@ -1,0 +1,244 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/screen_settings.gd" type="Script" id=2]
+[ext_resource path="res://styles/header_font.tres" type="DynamicFont" id=3]
+
+[node name="screen_settings" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="HBoxHeader" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 144.0
+margin_right = 1280.0
+margin_bottom = 258.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxHeader"]
+margin_left = 214.0
+margin_right = 1065.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 3 )
+text = "SETTINGS_HEADER"
+
+[node name="HBoxAnswerResultAnimation" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 262.0
+margin_right = 1280.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 100, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxAnswerResultAnimation"]
+margin_left = 289.0
+margin_top = 6.0
+margin_right = 911.0
+margin_bottom = 44.0
+text = "SETTINGS_ANSWER_RESULT_ANIMATION"
+
+[node name="CheckButtonAnswerResultAnimation" type="CheckButton" parent="VBoxContainer/HBoxAnswerResultAnimation"]
+margin_left = 915.0
+margin_right = 991.0
+margin_bottom = 50.0
+focus_neighbour_left = NodePath("../../HBoxControls/ButtonCancel")
+focus_neighbour_top = NodePath("../../HBoxControls/ButtonCancel")
+focus_neighbour_right = NodePath("../../HBoxSound/SliderSound")
+focus_neighbour_bottom = NodePath("../../HBoxSound/SliderSound")
+focus_next = NodePath("../../HBoxSound/SliderSound")
+focus_previous = NodePath("../../HBoxControls/ButtonCancel")
+
+[node name="HBoxSound" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 316.0
+margin_right = 1280.0
+margin_bottom = 366.0
+rect_min_size = Vector2( 100, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxSound"]
+margin_left = 330.0
+margin_top = 6.0
+margin_right = 746.0
+margin_bottom = 44.0
+text = "SETTINGS_SOUND_VOLUME"
+
+[node name="SliderSound" type="HSlider" parent="VBoxContainer/HBoxSound"]
+margin_left = 750.0
+margin_top = 17.0
+margin_right = 950.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 200, 16 )
+focus_neighbour_left = NodePath("../../HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
+focus_neighbour_top = NodePath("../../HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
+focus_neighbour_right = NodePath("../../HBoxMusic/SliderMusic")
+focus_neighbour_bottom = NodePath("../../HBoxMusic/SliderMusic")
+focus_next = NodePath("../../HBoxMusic/SliderMusic")
+focus_previous = NodePath("../../HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
+size_flags_vertical = 4
+value = 100.0
+ticks_on_borders = true
+
+[node name="HBoxMusic" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 370.0
+margin_right = 1280.0
+margin_bottom = 420.0
+rect_min_size = Vector2( 100, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxMusic"]
+margin_left = 333.0
+margin_top = 6.0
+margin_right = 742.0
+margin_bottom = 44.0
+text = "SETTINGS_MUSIC_VOLUME"
+
+[node name="SliderMusic" type="HSlider" parent="VBoxContainer/HBoxMusic"]
+margin_left = 746.0
+margin_top = 17.0
+margin_right = 946.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 200, 16 )
+focus_neighbour_left = NodePath("../../HBoxSound/SliderSound")
+focus_neighbour_top = NodePath("../../HBoxSound/SliderSound")
+focus_neighbour_right = NodePath("../../HBoxBackground/OptionBackground")
+focus_neighbour_bottom = NodePath("../../HBoxBackground/OptionBackground")
+focus_next = NodePath("../../HBoxBackground/OptionBackground")
+focus_previous = NodePath("../../HBoxSound/SliderSound")
+size_flags_vertical = 4
+value = 100.0
+ticks_on_borders = true
+
+[node name="HBoxBackground" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 424.0
+margin_right = 1280.0
+margin_bottom = 474.0
+rect_min_size = Vector2( 100, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxBackground"]
+margin_left = 407.0
+margin_top = 6.0
+margin_right = 784.0
+margin_bottom = 44.0
+text = "SETTINGS_BACKGROUND"
+
+[node name="OptionBackground" type="OptionButton" parent="VBoxContainer/HBoxBackground"]
+margin_left = 788.0
+margin_top = 3.0
+margin_right = 873.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 85, 20 )
+focus_neighbour_left = NodePath("../../HBoxMusic/SliderMusic")
+focus_neighbour_top = NodePath("../../HBoxMusic/SliderMusic")
+focus_neighbour_right = NodePath("../../HBoxMusicTrack/OptionMusicTrack")
+focus_neighbour_bottom = NodePath("../../HBoxMusicTrack/OptionMusicTrack")
+focus_next = NodePath("../../HBoxMusicTrack/OptionMusicTrack")
+focus_previous = NodePath("../../HBoxMusic/SliderMusic")
+size_flags_vertical = 4
+
+[node name="HBoxMusicTrack" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 478.0
+margin_right = 1280.0
+margin_bottom = 528.0
+rect_min_size = Vector2( 100, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxMusicTrack"]
+margin_left = 404.0
+margin_top = 6.0
+margin_right = 787.0
+margin_bottom = 44.0
+text = "SETTINGS_MUSIC_TRACK"
+
+[node name="OptionMusicTrack" type="OptionButton" parent="VBoxContainer/HBoxMusicTrack"]
+margin_left = 791.0
+margin_top = 3.0
+margin_right = 876.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 85, 20 )
+focus_neighbour_left = NodePath("../../HBoxBackground/OptionBackground")
+focus_neighbour_top = NodePath("../../HBoxBackground/OptionBackground")
+focus_neighbour_right = NodePath("../../HBoxGameTheme/OptionGameTheme")
+focus_neighbour_bottom = NodePath("../../HBoxGameTheme/OptionGameTheme")
+focus_next = NodePath("../../HBoxGameTheme/OptionGameTheme")
+focus_previous = NodePath("../../HBoxBackground/OptionBackground")
+size_flags_vertical = 4
+
+[node name="HBoxGameTheme" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 532.0
+margin_right = 1280.0
+margin_bottom = 582.0
+rect_min_size = Vector2( 100, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxGameTheme"]
+margin_left = 403.0
+margin_top = 6.0
+margin_right = 787.0
+margin_bottom = 44.0
+text = "SETTINGS_GAME_THEME"
+
+[node name="OptionGameTheme" type="OptionButton" parent="VBoxContainer/HBoxGameTheme"]
+margin_left = 791.0
+margin_top = 3.0
+margin_right = 876.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 85, 20 )
+focus_neighbour_left = NodePath("../../HBoxMusicTrack/OptionMusicTrack")
+focus_neighbour_top = NodePath("../../HBoxMusicTrack/OptionMusicTrack")
+focus_neighbour_right = NodePath("../../HBoxControls/ButtonApply")
+focus_neighbour_bottom = NodePath("../../HBoxControls/ButtonApply")
+focus_next = NodePath("../../HBoxControls/ButtonApply")
+focus_previous = NodePath("../../HBoxMusicTrack/OptionMusicTrack")
+size_flags_vertical = 4
+
+[node name="HBoxControls" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 586.0
+margin_right = 1280.0
+margin_bottom = 656.0
+rect_min_size = Vector2( 100, 70 )
+alignment = 1
+
+[node name="ButtonApply" type="Button" parent="VBoxContainer/HBoxControls"]
+margin_left = 348.0
+margin_top = 10.0
+margin_right = 625.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 50 )
+focus_neighbour_left = NodePath("../../HBoxGameTheme/OptionGameTheme")
+focus_neighbour_top = NodePath("../../HBoxGameTheme/OptionGameTheme")
+focus_neighbour_right = NodePath("../ButtonCancel")
+focus_neighbour_bottom = NodePath("../ButtonCancel")
+focus_next = NodePath("../ButtonCancel")
+focus_previous = NodePath("../../HBoxGameTheme/OptionGameTheme")
+size_flags_vertical = 4
+text = "SETTINGS_APPLY"
+
+[node name="ButtonCancel" type="Button" parent="VBoxContainer/HBoxControls"]
+margin_left = 629.0
+margin_top = 10.0
+margin_right = 931.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 50 )
+focus_neighbour_left = NodePath("../ButtonApply")
+focus_neighbour_top = NodePath("../ButtonApply")
+focus_neighbour_right = NodePath("../../HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
+focus_neighbour_bottom = NodePath("../../HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
+focus_next = NodePath("../../HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
+focus_previous = NodePath("../ButtonApply")
+size_flags_vertical = 4
+text = "SETTINGS_CANCEL"
+[connection signal="toggled" from="VBoxContainer/HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation" to="." method="_on_CheckButtonAnswerResultAnimation_toggled"]
+[connection signal="value_changed" from="VBoxContainer/HBoxSound/SliderSound" to="." method="_on_SliderSound_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxMusic/SliderMusic" to="." method="_on_SliderMusic_value_changed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxBackground/OptionBackground" to="." method="_on_OptionBackground_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxMusicTrack/OptionMusicTrack" to="." method="_on_OptionMusicTrack_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxGameTheme/OptionGameTheme" to="." method="_on_OptionGameTheme_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxControls/ButtonApply" to="." method="_on_ButtonApply_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxControls/ButtonCancel" to="." method="_on_ButtonCancel_pressed"]

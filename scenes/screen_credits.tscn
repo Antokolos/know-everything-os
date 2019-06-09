@@ -1,0 +1,241 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/screen_credits.gd" type="Script" id=2]
+[ext_resource path="res://styles/header_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/images/200px-Godot_logo.svg.png" type="Texture" id=4]
+
+[node name="screen_credits" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="HBoxHeader" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 1280.0
+margin_bottom = 132.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxHeader"]
+margin_left = 246.0
+margin_right = 1034.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 3 )
+text = "CREDITS_HEADER"
+
+[node name="HBoxGodot" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 136.0
+margin_right = 1280.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 100, 50 )
+custom_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxGodot"]
+margin_left = 409.0
+margin_right = 609.0
+margin_bottom = 84.0
+texture = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxGodot"]
+margin_left = 619.0
+margin_right = 871.0
+margin_bottom = 84.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxGodot/VBoxContainer"]
+margin_right = 252.0
+margin_bottom = 38.0
+size_flags_vertical = 3
+text = "CREDITS_GODOT"
+align = 1
+valign = 1
+
+[node name="GodotUrl" type="RichTextLabel" parent="VBoxContainer/HBoxGodot/VBoxContainer"]
+margin_top = 42.0
+margin_right = 252.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 200, 42 )
+rect_clip_content = false
+bbcode_enabled = true
+
+[node name="HBoxFont" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 224.0
+margin_right = 1280.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 100, 70 )
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxFont"]
+margin_left = 290.0
+margin_right = 990.0
+margin_bottom = 84.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxFont/VBoxContainer"]
+margin_right = 700.0
+margin_bottom = 38.0
+text = "CREDITS_FONT"
+
+[node name="SteinemUrl" type="RichTextLabel" parent="VBoxContainer/HBoxFont/VBoxContainer"]
+margin_top = 42.0
+margin_right = 700.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 700, 42 )
+rect_clip_content = false
+size_flags_horizontal = 4
+
+[node name="HBoxProofreading" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 312.0
+margin_right = 1280.0
+margin_bottom = 372.0
+rect_min_size = Vector2( 100, 60 )
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxProofreading"]
+margin_left = 456.0
+margin_right = 823.0
+margin_bottom = 60.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxProofreading/VBoxContainer"]
+margin_top = 11.0
+margin_right = 367.0
+margin_bottom = 49.0
+text = "CREDITS_PROOFREADER"
+align = 1
+
+[node name="HBoxMusic" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 376.0
+margin_right = 1280.0
+margin_bottom = 708.0
+rect_min_size = Vector2( 100, 70 )
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxMusic"]
+margin_left = 194.0
+margin_right = 1085.0
+margin_bottom = 332.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer"]
+margin_right = 891.0
+margin_bottom = 38.0
+text = "CREDITS_ENCHANTED_TIKI_86"
+align = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer"]
+margin_top = 42.0
+margin_right = 891.0
+margin_bottom = 80.0
+text = "CREDITS_PLEASE_ANSWER"
+align = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer"]
+margin_top = 84.0
+margin_right = 891.0
+margin_bottom = 122.0
+text = "CREDITS_FROZEN_JAM"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxMusic/VBoxContainer"]
+margin_top = 126.0
+margin_right = 891.0
+margin_bottom = 164.0
+custom_constants/separation = 142
+alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer/HBoxContainer"]
+margin_right = 411.0
+margin_bottom = 38.0
+text = "CREDITS_THROUGH_SPACE"
+align = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer/HBoxContainer"]
+margin_left = 553.0
+margin_right = 891.0
+margin_bottom = 38.0
+text = "CREDITS_BLUE_SPACE"
+align = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer"]
+margin_top = 168.0
+margin_right = 891.0
+margin_bottom = 206.0
+text = "CREDITS_DRIFTING_BEYOND"
+align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxMusic/VBoxContainer"]
+margin_top = 210.0
+margin_right = 891.0
+margin_bottom = 248.0
+custom_constants/separation = 70
+alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer/HBoxContainer2"]
+margin_left = 75.0
+margin_right = 419.0
+margin_bottom = 38.0
+text = "CREDITS_LOSE_SOUND"
+align = 1
+
+[node name="Label8" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer/HBoxContainer2"]
+margin_left = 489.0
+margin_right = 815.0
+margin_bottom = 38.0
+text = "CREDITS_WIN_SOUND"
+align = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/HBoxMusic/VBoxContainer"]
+margin_top = 252.0
+margin_right = 891.0
+margin_bottom = 290.0
+custom_constants/separation = 70
+alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer/HBoxContainer3"]
+margin_left = 15.0
+margin_right = 424.0
+margin_bottom = 38.0
+text = "CREDITS_CORRECT_SOUND"
+align = 1
+
+[node name="Label10" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer/HBoxContainer3"]
+margin_left = 494.0
+margin_right = 875.0
+margin_bottom = 38.0
+text = "CREDITS_WRONG_SOUND"
+align = 1
+
+[node name="Label11" type="Label" parent="VBoxContainer/HBoxMusic/VBoxContainer"]
+margin_top = 294.0
+margin_right = 891.0
+margin_bottom = 332.0
+text = "CREDITS_CLICK_SOUND"
+align = 1
+
+[node name="HBoxControls" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 712.0
+margin_right = 1280.0
+margin_bottom = 782.0
+rect_min_size = Vector2( 100, 70 )
+alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxControls"]
+margin_left = 520.0
+margin_top = 10.0
+margin_right = 759.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "CREDITS_BACK"
+[connection signal="meta_clicked" from="VBoxContainer/HBoxGodot/VBoxContainer/GodotUrl" to="." method="_on_GodotUrl_meta_clicked"]
+[connection signal="meta_clicked" from="VBoxContainer/HBoxFont/VBoxContainer/SteinemUrl" to="." method="_on_SteinemUrl_meta_clicked"]
+[connection signal="pressed" from="VBoxContainer/HBoxControls/Back" to="." method="_on_Back_pressed"]

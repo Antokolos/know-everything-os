@@ -1,0 +1,372 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/screen_about.gd" type="Script" id=2]
+[ext_resource path="res://styles/header_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://styles/transparent_panel.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/images/nonlin_tq.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/images/advfour.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/images/red_hood.jpg" type="Texture" id=7]
+[ext_resource path="res://assets/images/the_barbarian.jpg" type="Texture" id=8]
+[ext_resource path="res://assets/images/wild_island_quest.jpg" type="Texture" id=9]
+
+[node name="screen_about" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="HBoxHeader" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 26.0
+margin_right = 1280.0
+margin_bottom = 140.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxHeader"]
+margin_left = 282.0
+margin_right = 997.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 3 )
+text = "ABOUT_HEADER"
+
+[node name="HBoxAuthor" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 144.0
+margin_right = 1280.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 100, 50 )
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxAuthor"]
+margin_left = 347.0
+margin_top = 6.0
+margin_right = 592.0
+margin_bottom = 44.0
+text = "ABOUT_AUTHOR"
+
+[node name="SiteUrl" type="RichTextLabel" parent="VBoxContainer/HBoxAuthor"]
+margin_left = 602.0
+margin_top = 5.0
+margin_right = 932.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 330, 40 )
+size_flags_vertical = 4
+bbcode_enabled = true
+scroll_active = false
+
+[node name="GamesContent" type="HBoxContainer" parent="VBoxContainer"]
+margin_left = 148.0
+margin_top = 198.0
+margin_right = 1131.0
+margin_bottom = 699.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="HBoxContainerCaptions" type="HBoxContainer" parent="VBoxContainer/GamesContent"]
+margin_right = 519.0
+margin_bottom = 501.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CaptionsGrid" type="GridContainer" parent="VBoxContainer/GamesContent/HBoxContainerCaptions"]
+margin_right = 519.0
+margin_bottom = 501.0
+size_flags_horizontal = 4
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+
+[node name="ABOUT_CAPTION_NONLINEAR_TQ" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid"]
+margin_right = 519.0
+margin_bottom = 44.0
+text = "ABOUT_CAPTION_NONLINEAR_TQ"
+
+[node name="ABOUT_CAPTION_ADVFOUR" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid"]
+margin_top = 54.0
+margin_right = 519.0
+margin_bottom = 98.0
+text = "ABOUT_CAPTION_ADVFOUR"
+
+[node name="ABOUT_CAPTION_REDHOOD" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid"]
+margin_top = 108.0
+margin_right = 519.0
+margin_bottom = 152.0
+text = "ABOUT_CAPTION_REDHOOD"
+
+[node name="ABOUT_CAPTION_BARBARIAN" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid"]
+margin_top = 162.0
+margin_right = 519.0
+margin_bottom = 206.0
+text = "ABOUT_CAPTION_BARBARIAN"
+
+[node name="ABOUT_CAPTION_WIQ" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid"]
+margin_top = 216.0
+margin_right = 519.0
+margin_bottom = 260.0
+text = "ABOUT_CAPTION_WIQ"
+
+[node name="HBoxContainerInfo" type="HBoxContainer" parent="VBoxContainer/GamesContent"]
+margin_left = 523.0
+margin_right = 983.0
+margin_bottom = 501.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo"]
+margin_right = 460.0
+margin_bottom = 501.0
+size_flags_horizontal = 3
+custom_styles/panel = ExtResource( 4 )
+tabs_visible = false
+
+[node name="ABOUT_CAPTION_NONLINEAR_TQ" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 300, 120 )
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_NONLINEAR_TQ"]
+margin_right = 460.0
+margin_bottom = 389.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_NONLINEAR_TQ/Container"]
+margin_right = 460.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 460, 215 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_NONLINEAR_TQ/Container"]
+margin_top = 219.0
+margin_right = 460.0
+margin_bottom = 389.0
+rect_min_size = Vector2( 460, 170 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ABOUT_GAME_NONLINEAR_TQ"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ButtonOpen" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_NONLINEAR_TQ"]
+margin_left = 40.0
+margin_top = 409.0
+margin_right = 419.0
+margin_bottom = 453.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ABOUT_OPEN_IN_STORE"
+
+[node name="ABOUT_CAPTION_ADVFOUR" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 300, 120 )
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_ADVFOUR"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_ADVFOUR/Container"]
+margin_right = 460.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 460, 215 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_ADVFOUR/Container"]
+margin_left = 28.0
+margin_right = 328.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 300, 170 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ABOUT_GAME_ADVFOUR"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ButtonOpen" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_ADVFOUR"]
+margin_left = 33.0
+margin_top = 38.0
+margin_right = 407.0
+margin_bottom = 81.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ABOUT_OPEN_IN_STORE"
+
+[node name="ABOUT_CAPTION_REDHOOD" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 300, 120 )
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_REDHOOD"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_REDHOOD/Container"]
+margin_right = 460.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 460, 215 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_REDHOOD/Container"]
+margin_left = 28.0
+margin_right = 328.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 300, 170 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ABOUT_GAME_REDHOOD"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ButtonOpen" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_REDHOOD"]
+margin_left = 33.0
+margin_top = 38.0
+margin_right = 407.0
+margin_bottom = 81.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ABOUT_OPEN_IN_STORE"
+
+[node name="ABOUT_CAPTION_BARBARIAN" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 300, 120 )
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_BARBARIAN"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_BARBARIAN/Container"]
+margin_right = 460.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 460, 215 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_BARBARIAN/Container"]
+margin_left = 28.0
+margin_right = 328.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 300, 170 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ABOUT_GAME_BARBARIAN"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ButtonOpen" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_BARBARIAN"]
+margin_left = 33.0
+margin_top = 38.0
+margin_right = 407.0
+margin_bottom = 81.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ABOUT_OPEN_IN_STORE"
+
+[node name="ABOUT_CAPTION_WIQ" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 300, 120 )
+custom_constants/separation = 20
+
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_WIQ"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_WIQ/Container"]
+margin_right = 460.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 460, 215 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_WIQ/Container"]
+margin_left = 28.0
+margin_right = 328.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 300, 170 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ABOUT_GAME_WIQ"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ButtonOpen" type="Button" parent="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_WIQ"]
+margin_left = 33.0
+margin_top = 38.0
+margin_right = 407.0
+margin_bottom = 81.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ABOUT_OPEN_IN_STORE"
+
+[node name="HBoxControls" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 703.0
+margin_right = 1280.0
+margin_bottom = 773.0
+rect_min_size = Vector2( 100, 70 )
+alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxControls"]
+margin_left = 533.0
+margin_top = 10.0
+margin_right = 746.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "ABOUT_BACK"
+[connection signal="meta_clicked" from="VBoxContainer/HBoxAuthor/SiteUrl" to="." method="_on_SiteUrl_meta_clicked"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid/ABOUT_CAPTION_NONLINEAR_TQ" to="." method="_on_ABOUT_CAPTION_NONLINEAR_TQ_pressed"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid/ABOUT_CAPTION_ADVFOUR" to="." method="_on_ABOUT_CAPTION_ADVFOUR_pressed"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid/ABOUT_CAPTION_REDHOOD" to="." method="_on_ABOUT_CAPTION_REDHOOD_pressed"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid/ABOUT_CAPTION_BARBARIAN" to="." method="_on_ABOUT_CAPTION_BARBARIAN_pressed"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerCaptions/CaptionsGrid/ABOUT_CAPTION_WIQ" to="." method="_on_ABOUT_CAPTION_WIQ_pressed"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_NONLINEAR_TQ/ButtonOpen" to="." method="_on_ButtonNonlinearTQ_pressed"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_ADVFOUR/ButtonOpen" to="." method="_on_ButtonAdvFour_pressed"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_REDHOOD/ButtonOpen" to="." method="_on_ButtonRedHood_pressed"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_BARBARIAN/ButtonOpen" to="." method="_on_ButtonBarbarian_pressed"]
+[connection signal="pressed" from="VBoxContainer/GamesContent/HBoxContainerInfo/TabContainer/ABOUT_CAPTION_WIQ/ButtonOpen" to="." method="_on_ButtonWIQ_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxControls/Back" to="." method="_on_Back_pressed"]

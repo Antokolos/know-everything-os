@@ -1,0 +1,173 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/game_join.gd" type="Script" id=2]
+[ext_resource path="res://styles/header_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/lobby_player.gd" type="Script" id=4]
+[ext_resource path="res://scenes/lobby_categories.gd" type="Script" id=5]
+[ext_resource path="res://scenes/lobby_connect.gd" type="Script" id=6]
+[ext_resource path="res://styles/button_pressed.tres" type="StyleBox" id=7]
+[ext_resource path="res://styles/button_normal.tres" type="StyleBox" id=8]
+
+[node name="game_join" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="HBoxHeader" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 1280.0
+margin_bottom = 186.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxHeader"]
+margin_left = 173.0
+margin_right = 1106.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 3 )
+text = "GAME_JOIN_HEADER"
+align = 1
+
+[node name="VBoxLobbies" type="VBoxContainer" parent="VBoxContainer"]
+margin_left = 84.0
+margin_top = 190.0
+margin_right = 1195.0
+margin_bottom = 654.0
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="LobbiesHeader" type="GridContainer" parent="VBoxContainer/VBoxLobbies"]
+margin_right = 1111.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 870, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 20
+columns = 4
+
+[node name="Player" type="Label" parent="VBoxContainer/VBoxLobbies/LobbiesHeader"]
+margin_top = 3.0
+margin_right = 311.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 311, 38 )
+size_flags_horizontal = 4
+text = "GAME_JOIN_PLAYER"
+align = 2
+valign = 1
+script = ExtResource( 4 )
+
+[node name="Categories" type="Label" parent="VBoxContainer/VBoxLobbies/LobbiesHeader"]
+margin_left = 331.0
+margin_top = 3.0
+margin_right = 831.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_horizontal = 4
+text = "GAME_JOIN_CATEGORIES"
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 5 )
+
+[node name="Connect" type="Button" parent="VBoxContainer/VBoxLobbies/LobbiesHeader"]
+margin_left = 851.0
+margin_right = 1091.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 240, 25 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "GAME_JOIN_CONNECT"
+clip_text = true
+script = ExtResource( 6 )
+
+[node name="Separator" type="Label" parent="VBoxContainer/VBoxLobbies/LobbiesHeader"]
+margin_left = 1111.0
+margin_top = 3.0
+margin_right = 1111.0
+margin_bottom = 41.0
+size_flags_horizontal = 4
+align = 1
+valign = 1
+
+[node name="HBoxLobbies" type="HBoxContainer" parent="VBoxContainer/VBoxLobbies"]
+margin_top = 48.0
+margin_right = 1111.0
+margin_bottom = 348.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/VBoxLobbies/HBoxLobbies"]
+margin_left = 120.0
+margin_right = 990.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 600, 300 )
+scroll_horizontal_enabled = false
+
+[node name="LobbiesGrid" type="GridContainer" parent="VBoxContainer/VBoxLobbies/HBoxLobbies/ScrollContainer"]
+margin_right = 870.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 870, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 4
+
+[node name="MessageWait" type="Label" parent="VBoxContainer/VBoxLobbies"]
+margin_top = 352.0
+margin_right = 1111.0
+margin_bottom = 390.0
+rect_min_size = Vector2( 100, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "GAME_JOIN_WAIT_MESSAGE"
+align = 1
+
+[node name="ButtonFriendsOnly" type="Button" parent="VBoxContainer/VBoxLobbies"]
+margin_left = 335.0
+margin_top = 394.0
+margin_right = 775.0
+margin_bottom = 464.0
+rect_min_size = Vector2( 440, 70 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 8 )
+toggle_mode = true
+text = "GAME_JOIN_FRIENDS_ONLY"
+
+[node name="HBoxActions" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 658.0
+margin_right = 1280.0
+margin_bottom = 728.0
+rect_min_size = Vector2( 100, 70 )
+alignment = 1
+
+[node name="CreateOwnGame" type="Button" parent="VBoxContainer/HBoxActions"]
+margin_left = 233.0
+margin_top = 10.0
+margin_right = 755.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "GAME_JOIN_CREATE_OWN_GAME"
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxActions"]
+margin_left = 759.0
+margin_top = 10.0
+margin_right = 1047.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "GAME_JOIN_BACK"
+[connection signal="toggled" from="VBoxContainer/VBoxLobbies/ButtonFriendsOnly" to="." method="_on_ButtonFriendsOnly_toggled"]
+[connection signal="pressed" from="VBoxContainer/HBoxActions/CreateOwnGame" to="." method="_on_CreateOwnGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxActions/Back" to="." method="_on_Back_pressed"]

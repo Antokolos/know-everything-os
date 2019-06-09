@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Through-Space.ogg-25ed0fe3c6aed97d5bd6d29156ed2127.oggstr"
+
+[deps]
+
+source_file="res://music/Through-Space.ogg"
+dest_files=[ "res://.import/Through-Space.ogg-25ed0fe3c6aed97d5bd6d29156ed2127.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

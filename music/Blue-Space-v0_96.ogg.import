@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Blue-Space-v0_96.ogg-a164aabf2555ef9fa9011bb64fc43ef3.oggstr"
+
+[deps]
+
+source_file="res://music/Blue-Space-v0_96.ogg"
+dest_files=[ "res://.import/Blue-Space-v0_96.ogg-a164aabf2555ef9fa9011bb64fc43ef3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

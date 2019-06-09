@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game_params.gd" type="Script" id=1]
+[ext_resource path="res://sound/click.wav" type="AudioStream" id=2]
+
+[node name="game_params" type="Node"]
+script = ExtResource( 1 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = "Music"
+
+[node name="ClickSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Effects"
+[connection signal="finished" from="MusicPlayer" to="." method="_on_MusicPlayer_finished"]
