@@ -101,6 +101,8 @@
 "GAME_WAIT_STARTING","Starting in %d…","Начинаем через %d…"
 "GAME_JOIN_HEADER","List of available games","Список доступных игр"
 "GAME_JOIN_FRIENDS_ONLY","Show only friends","Показывать только друзей"
+"GAME_JOIN_UPDATE_IN","Updating the list in %d","Обновление списка через %d"
+"GAME_JOIN_UPDATE_NOW","Update now","Обновить сейчас"
 "GAME_JOIN_WAIT_MESSAGE","Retrieving list of available games, please wait…","Получение списка доступных игр, пожалуйста, подождите…"
 "GAME_JOIN_NO_GAMES_MESSAGE","There is no available games right now.","Прямо сейчас нет доступных игр."
 "GAME_JOIN_CONNECT","Connect","Подключиться"
