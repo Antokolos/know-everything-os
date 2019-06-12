@@ -17,9 +17,9 @@ anchor_bottom = 1.0
 alignment = 1
 
 [node name="HBoxHeader" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 144.0
+margin_top = 117.0
 margin_right = 1280.0
-margin_bottom = 258.0
+margin_bottom = 231.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxHeader"]
@@ -30,9 +30,9 @@ custom_fonts/font = ExtResource( 3 )
 text = "SETTINGS_HEADER"
 
 [node name="HBoxAnswerResultAnimation" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 262.0
+margin_top = 235.0
 margin_right = 1280.0
-margin_bottom = 312.0
+margin_bottom = 285.0
 rect_min_size = Vector2( 100, 50 )
 alignment = 1
 
@@ -49,15 +49,40 @@ margin_right = 991.0
 margin_bottom = 50.0
 focus_neighbour_left = NodePath("../../HBoxControls/ButtonCancel")
 focus_neighbour_top = NodePath("../../HBoxControls/ButtonCancel")
+focus_neighbour_right = NodePath("../../HBoxFullscreen/CheckButtonFullscreen")
+focus_neighbour_bottom = NodePath("../../HBoxFullscreen/CheckButtonFullscreen")
+focus_next = NodePath("../../HBoxFullscreen/CheckButtonFullscreen")
+focus_previous = NodePath("../../HBoxControls/ButtonCancel")
+
+[node name="HBoxFullscreen" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 289.0
+margin_right = 1280.0
+margin_bottom = 339.0
+rect_min_size = Vector2( 100, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxFullscreen"]
+margin_left = 419.0
+margin_top = 6.0
+margin_right = 781.0
+margin_bottom = 44.0
+text = "SETTINGS_FULLSCREEN"
+
+[node name="CheckButtonFullscreen" type="CheckButton" parent="VBoxContainer/HBoxFullscreen"]
+margin_left = 785.0
+margin_right = 861.0
+margin_bottom = 50.0
+focus_neighbour_left = NodePath("../../HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
+focus_neighbour_top = NodePath("../../HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
 focus_neighbour_right = NodePath("../../HBoxSound/SliderSound")
 focus_neighbour_bottom = NodePath("../../HBoxSound/SliderSound")
 focus_next = NodePath("../../HBoxSound/SliderSound")
-focus_previous = NodePath("../../HBoxControls/ButtonCancel")
+focus_previous = NodePath("../../HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
 
 [node name="HBoxSound" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 316.0
+margin_top = 343.0
 margin_right = 1280.0
-margin_bottom = 366.0
+margin_bottom = 393.0
 rect_min_size = Vector2( 100, 50 )
 alignment = 1
 
@@ -85,9 +110,9 @@ value = 100.0
 ticks_on_borders = true
 
 [node name="HBoxMusic" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 370.0
+margin_top = 397.0
 margin_right = 1280.0
-margin_bottom = 420.0
+margin_bottom = 447.0
 rect_min_size = Vector2( 100, 50 )
 alignment = 1
 
@@ -115,9 +140,9 @@ value = 100.0
 ticks_on_borders = true
 
 [node name="HBoxBackground" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 424.0
+margin_top = 451.0
 margin_right = 1280.0
-margin_bottom = 474.0
+margin_bottom = 501.0
 rect_min_size = Vector2( 100, 50 )
 alignment = 1
 
@@ -143,9 +168,9 @@ focus_previous = NodePath("../../HBoxMusic/SliderMusic")
 size_flags_vertical = 4
 
 [node name="HBoxMusicTrack" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 478.0
+margin_top = 505.0
 margin_right = 1280.0
-margin_bottom = 528.0
+margin_bottom = 555.0
 rect_min_size = Vector2( 100, 50 )
 alignment = 1
 
@@ -171,9 +196,9 @@ focus_previous = NodePath("../../HBoxBackground/OptionBackground")
 size_flags_vertical = 4
 
 [node name="HBoxGameTheme" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 532.0
+margin_top = 559.0
 margin_right = 1280.0
-margin_bottom = 582.0
+margin_bottom = 609.0
 rect_min_size = Vector2( 100, 50 )
 alignment = 1
 
@@ -199,9 +224,9 @@ focus_previous = NodePath("../../HBoxMusicTrack/OptionMusicTrack")
 size_flags_vertical = 4
 
 [node name="HBoxControls" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 586.0
+margin_top = 613.0
 margin_right = 1280.0
-margin_bottom = 656.0
+margin_bottom = 683.0
 rect_min_size = Vector2( 100, 70 )
 alignment = 1
 
@@ -235,6 +260,7 @@ focus_previous = NodePath("../ButtonApply")
 size_flags_vertical = 4
 text = "SETTINGS_CANCEL"
 [connection signal="toggled" from="VBoxContainer/HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation" to="." method="_on_CheckButtonAnswerResultAnimation_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxFullscreen/CheckButtonFullscreen" to="." method="_on_CheckButtonFullscreen_toggled"]
 [connection signal="value_changed" from="VBoxContainer/HBoxSound/SliderSound" to="." method="_on_SliderSound_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/HBoxMusic/SliderMusic" to="." method="_on_SliderMusic_value_changed"]
 [connection signal="item_selected" from="VBoxContainer/HBoxBackground/OptionBackground" to="." method="_on_OptionBackground_item_selected"]

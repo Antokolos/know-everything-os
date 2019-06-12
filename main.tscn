@@ -18,7 +18,7 @@ anchor_bottom = 1.0
 
 [node name="HBoxLanguage" type="HBoxContainer" parent="VBoxMain"]
 margin_right = 1280.0
-margin_bottom = 61.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
@@ -26,18 +26,18 @@ custom_constants/separation = 16
 alignment = 1
 
 [node name="MarginStubLeft" type="Control" parent="VBoxMain/HBoxLanguage"]
-margin_bottom = 61.0
+margin_bottom = 63.0
 
 [node name="HBoxRules" type="HBoxContainer" parent="VBoxMain/HBoxLanguage"]
 margin_left = 16.0
 margin_right = 549.0
-margin_bottom = 61.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 
 [node name="Rules" type="Button" parent="VBoxMain/HBoxLanguage/HBoxRules"]
-margin_top = 6.0
+margin_top = 7.0
 margin_right = 215.0
-margin_bottom = 54.0
+margin_bottom = 55.0
 rect_min_size = Vector2( 150, 48 )
 size_flags_vertical = 4
 text = "MENU_RULES"
@@ -55,13 +55,12 @@ text = "MENU_EDITOR"
 [node name="VBoxLanguage" type="VBoxContainer" parent="VBoxMain/HBoxLanguage"]
 margin_left = 565.0
 margin_right = 715.0
-margin_bottom = 61.0
+margin_bottom = 63.0
 alignment = 1
 
 [node name="OptionLanguage" type="OptionButton" parent="VBoxMain/HBoxLanguage/VBoxLanguage"]
-margin_top = 8.0
 margin_right = 150.0
-margin_bottom = 52.0
+margin_bottom = 63.0
 rect_min_size = Vector2( 150, 32 )
 custom_fonts/font = ExtResource( 3 )
 
@@ -69,15 +68,15 @@ custom_fonts/font = ExtResource( 3 )
 editor/display_folded = true
 margin_left = 731.0
 margin_right = 1264.0
-margin_bottom = 61.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 alignment = 2
 
 [node name="Label" type="Label" parent="VBoxMain/HBoxLanguage/HBoxVersion"]
 margin_left = 455.0
-margin_top = 11.0
+margin_top = 12.0
 margin_right = 533.0
-margin_bottom = 49.0
+margin_bottom = 50.0
 text = "v. 1.0"
 align = 1
 valign = 1
@@ -85,12 +84,12 @@ valign = 1
 [node name="MarginStubRight" type="Control" parent="VBoxMain/HBoxLanguage"]
 margin_left = 1280.0
 margin_right = 1280.0
-margin_bottom = 61.0
+margin_bottom = 63.0
 
 [node name="HBoxHeader" type="HBoxContainer" parent="VBoxMain"]
-margin_top = 65.0
+margin_top = 67.0
 margin_right = 1280.0
-margin_bottom = 179.0
+margin_bottom = 181.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 alignment = 1
@@ -103,9 +102,9 @@ custom_fonts/font = ExtResource( 4 )
 text = "GAME_NAME"
 
 [node name="VBoxGreeting" type="VBoxContainer" parent="VBoxMain"]
-margin_top = 183.0
+margin_top = 185.0
 margin_right = 1280.0
-margin_bottom = 305.0
+margin_bottom = 307.0
 alignment = 1
 
 [node name="LabelName" type="Label" parent="VBoxMain/VBoxGreeting"]
@@ -126,7 +125,7 @@ margin_bottom = 122.0
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxMain"]
-margin_top = 309.0
+margin_top = 311.0
 margin_right = 1280.0
 margin_bottom = 800.0
 size_flags_vertical = 3
@@ -134,9 +133,9 @@ size_flags_stretch_ratio = 0.8
 alignment = 1
 
 [node name="HBoxMenu" type="HBoxContainer" parent="VBoxMain/VBoxContainer"]
-margin_top = 39.0
+margin_top = 38.0
 margin_right = 1280.0
-margin_bottom = 451.0
+margin_bottom = 450.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxMain/VBoxContainer/HBoxMenu"]

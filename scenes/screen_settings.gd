@@ -6,10 +6,12 @@ onready var background_image = game_params.background_image
 onready var background_music = game_params.background_music
 onready var game_theme = game_params.game_theme
 onready var answer_result_animation = game_params.answer_result_animation
+onready var fullscreen = game_params.fullscreen
 onready var background_node = get_node("VBoxContainer/HBoxBackground/OptionBackground")
 onready var background_music_node = get_node("VBoxContainer/HBoxMusicTrack/OptionMusicTrack")
 onready var game_theme_node = get_node("VBoxContainer/HBoxGameTheme/OptionGameTheme")
 onready var anwer_result_animation_node = get_node("VBoxContainer/HBoxAnswerResultAnimation/CheckButtonAnswerResultAnimation")
+onready var fullscreen_node = get_node("VBoxContainer/HBoxFullscreen/CheckButtonFullscreen")
 onready var cancel_node = get_node("VBoxContainer/HBoxControls/ButtonCancel")
 
 func _ready():
@@ -31,6 +33,7 @@ func _ready():
 			background_music_node.select(j)
 		j = j + 1
 	anwer_result_animation_node.set_pressed(game_params.answer_result_animation)
+	fullscreen_node.set_pressed(game_params.fullscreen)
 	game_theme_node.add_item(tr("SETTINGS_GAME_THEME_LIGHT"), 0)
 	game_theme_node.set_item_metadata(0, game_params.GAME_THEME_LIGHT)
 	game_theme_node.add_item(tr("SETTINGS_GAME_THEME_DARK"), 1)
@@ -52,6 +55,7 @@ func _on_ButtonApply_pressed():
 	game_params.background_music = background_music
 	game_params.game_theme = game_theme
 	game_params.answer_result_animation = answer_result_animation
+	game_params.fullscreen = fullscreen
 	game_params.save_settings()
 	return get_tree().change_scene("res://main.tscn")
 
@@ -86,6 +90,10 @@ func _on_OptionGameTheme_item_selected(ID):
 
 func _on_CheckButtonAnswerResultAnimation_toggled(button_pressed):
 	answer_result_animation = not answer_result_animation
+
+func _on_CheckButtonFullscreen_toggled(button_pressed):
+	fullscreen = not fullscreen
+	game_params.init_fullscreen(fullscreen, true)
 
 func _input(event):
 	if game_params.is_event_cancel_action(event):

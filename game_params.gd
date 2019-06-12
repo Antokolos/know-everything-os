@@ -2,6 +2,9 @@ extends Node
 
 const DEFAULT_FONT_SIZE = 32
 const DEFAULT_ANSWER_RESULT_ANIMATION = true
+const DEFAULT_FULLSCREEN = true
+const DEFAULT_WINDOW_POSITION = Vector2(0, 0)
+const DEFAULT_WINDOW_SIZE = Vector2(1280, 800)
 const LANGUAGE_EN = 1
 const QUIZ_COUNT_LOW = 15
 const QUIZ_COUNT_NORMAL = 30
@@ -58,6 +61,7 @@ var background_music = DEFAULT_MUSIC
 var game_theme = GAME_THEME_DARK
 var font_size = DEFAULT_FONT_SIZE
 var answer_result_animation = DEFAULT_ANSWER_RESULT_ANIMATION
+var fullscreen = DEFAULT_FULLSCREEN
 var opponent_type = OPPONENT_NONE
 var lobby_type = LOBBY_PUBLIC
 
@@ -328,6 +332,9 @@ func load_settings():
 	if ("answer_result_animation" in d):
 		answer_result_animation = bool(d.answer_result_animation)
 	
+	if ("fullscreen" in d):
+		fullscreen = bool(d.fullscreen)
+	
 	if ("opponent_type" in d):
 		opponent_type = int(d.opponent_type)
 	
@@ -349,6 +356,7 @@ func save_settings():
 		"game_theme" : game_theme,
 		"font_size" : font_size,
 		"answer_result_animation" : answer_result_animation,
+		"fullscreen" : fullscreen,
 		"opponent_type" : opponent_type,
 		"lobby_type" : lobby_type
 	}
@@ -407,9 +415,17 @@ func add_music(music_file):
 	music[music_file] = stream
 	return music[music_file]
 
+func init_fullscreen(fs, do_resize):
+	OS.window_borderless = fs
+	OS.window_fullscreen = fs
+	if do_resize:
+		OS.set_window_position(DEFAULT_WINDOW_POSITION)
+		OS.set_window_size(DEFAULT_WINDOW_SIZE)
+
 func init_styles(texture_rect):
 	change_background(texture_rect)
 	texture_rect.theme.default_font.size = font_size
+	init_fullscreen(fullscreen, false)
 
 func change_background(texture_rect):
 	texture_rect.texture = backgrounds[background_image]
