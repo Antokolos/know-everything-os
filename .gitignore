@@ -3,6 +3,7 @@
 export.cfg
 export_presets.cfg
 stats.db
+*.translation
 
 # Mono-specific ignores
 .mono/

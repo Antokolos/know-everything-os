@@ -41,18 +41,19 @@ visible = false
 margin_top = 166.0
 margin_right = 1280.0
 margin_bottom = 210.0
+custom_constants/separation = 16
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxUpdateControls"]
-margin_left = 248.0
+margin_left = 242.0
 margin_top = 3.0
-margin_right = 611.0
+margin_right = 605.0
 margin_bottom = 41.0
 text = "GAME_JOIN_UPDATE_IN"
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxUpdateControls"]
-margin_left = 615.0
-margin_right = 1031.0
+margin_left = 621.0
+margin_right = 1037.0
 margin_bottom = 44.0
 text = "GAME_JOIN_UPDATE_NOW"
 
