@@ -1,0 +1,16 @@
+[center]
+[b]Music & Sound[/b]
+
+'Enchanted tiki 86' by Cynicmusic – http://cynicmusic.com
+'Through Space' by Maxstack
+'Please, answer me my friend' by Alexandr Zhelanov, https://soundcloud.com/alexandr-zhelanov
+'Frozen Jam' by Jordan Trudgett (tgfcoder), licensed under CC-BY-3
+'Blue Space' by FoxSynergy
+'Drifting Beyond the Stars' by HitCtrl
+'Game over' sound by themusicalnomad
+'Incorrect answer' sound by timgormly
+'Success' sound by jobro
+'Piano F Major chord, 3rd octave' sound by juskiddink
+Click sound from INSTEAD engine
+[/center]
+

@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/authors.gd" type="Script" id=2]
+[ext_resource path="res://styles/header_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://styles/default_font_bi.tres" type="DynamicFont" id=4]
+[ext_resource path="res://styles/default_font_i.tres" type="DynamicFont" id=5]
+[ext_resource path="res://styles/default_font_b.tres" type="DynamicFont" id=6]
+[ext_resource path="res://styles/default_font.tres" type="DynamicFont" id=7]
+
+[node name="credits" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="HBoxHeader" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 114.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxHeader"]
+margin_left = 220.0
+margin_right = 1060.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 3 )
+text = "AUTHORS_HEADER"
+
+[node name="HBoxAuthors" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 118.0
+margin_right = 1280.0
+margin_bottom = 726.0
+rect_min_size = Vector2( 100, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+alignment = 1
+
+[node name="MarginStubLeft" type="Control" parent="VBoxContainer/HBoxAuthors"]
+margin_bottom = 608.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxAuthors"]
+margin_left = 16.0
+margin_right = 1264.0
+margin_bottom = 608.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="AuthorsTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxAuthors/ScrollContainer"]
+margin_right = 1248.0
+margin_bottom = 608.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_italics_font = ExtResource( 4 )
+custom_fonts/italics_font = ExtResource( 5 )
+custom_fonts/bold_font = ExtResource( 6 )
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+
+[node name="MarginStubRight" type="Control" parent="VBoxContainer/HBoxAuthors"]
+margin_left = 1280.0
+margin_right = 1280.0
+margin_bottom = 608.0
+
+[node name="HBoxControls" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 730.0
+margin_right = 1280.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 100, 70 )
+alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxControls"]
+margin_left = 512.0
+margin_top = 10.0
+margin_right = 767.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_vertical = 4
+text = "AUTHORS_BACK"
+[connection signal="pressed" from="VBoxContainer/HBoxControls/Back" to="." method="_on_Back_pressed"]

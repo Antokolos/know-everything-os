@@ -14,6 +14,9 @@ func _ready():
 	steinem_url_node.pop()
 	back_node.grab_focus()
 
+func _on_AuthorsButton_pressed():
+	return get_tree().change_scene("res://scenes/authors.tscn")
+
 func _on_Back_pressed():
 	return get_tree().change_scene("res://main.tscn")
 
@@ -26,4 +29,3 @@ func _on_SteinemUrl_meta_clicked(meta):
 func _input(event):
 	if game_params.is_event_cancel_action(event):
 		_on_Back_pressed()
-
