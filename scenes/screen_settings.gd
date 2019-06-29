@@ -19,14 +19,14 @@ func _ready():
 	$VBoxContainer/HBoxMusic/SliderMusic.value = music_volume
 	$VBoxContainer/HBoxSound/SliderSound.value = effects_volume
 	var i = 0
-	for bg in game_params.list_files_in_directory(game_params.abspath("backgrounds"), "png"):
+	for bg in game_params.list_files_in_directory(game_params.abspath("backgrounds"), "png", true):
 		background_node.add_item(tr(bg.file), i)
 		background_node.set_item_metadata(i, bg)
 		if game_params.background_image == bg.file:
 			background_node.select(i)
 		i = i + 1
 	var j = 0
-	for mus in game_params.list_files_in_directory(game_params.abspath("music"), "ogg"):
+	for mus in game_params.list_files_in_directory(game_params.abspath("music"), "ogg", true):
 		background_music_node.add_item(tr(mus.file), j)
 		background_music_node.set_item_metadata(j, mus)
 		if game_params.background_music == mus.file:

@@ -428,7 +428,7 @@ size_flags_vertical = 4
 
 [node name="LabelPlayer" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel/Panel/VBoxContainer/HBoxContainer"]
 margin_top = 3.0
-margin_right = 173.0
+margin_right = 262.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_styles/normal = ExtResource( 10 )
@@ -449,7 +449,7 @@ text = "[LB]"
 align = 1
 
 [node name="LabelOpponent" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel/Panel/VBoxContainer/HBoxContainer"]
-margin_left = 354.0
+margin_left = 266.0
 margin_top = 3.0
 margin_right = 528.0
 margin_bottom = 36.0
@@ -506,7 +506,7 @@ size_flags_vertical = 4
 
 [node name="LabelPlayer" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel/VBoxContainer/HBoxContainer"]
 margin_top = 3.0
-margin_right = 173.0
+margin_right = 262.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_styles/normal = ExtResource( 10 )
@@ -527,7 +527,7 @@ text = "[RB]"
 align = 1
 
 [node name="LabelOpponent" type="Label" parent="Panel/VBoxContainer/HBoxAnswers1/Panel2/Panel/VBoxContainer/HBoxContainer"]
-margin_left = 354.0
+margin_left = 266.0
 margin_top = 3.0
 margin_right = 528.0
 margin_bottom = 36.0
@@ -589,7 +589,7 @@ size_flags_vertical = 4
 
 [node name="LabelPlayer" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel/Panel/VBoxContainer/HBoxContainer"]
 margin_top = 3.0
-margin_right = 173.0
+margin_right = 262.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_styles/normal = ExtResource( 10 )
@@ -610,7 +610,7 @@ text = "[LT]"
 align = 1
 
 [node name="LabelOpponent" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel/Panel/VBoxContainer/HBoxContainer"]
-margin_left = 354.0
+margin_left = 266.0
 margin_top = 3.0
 margin_right = 528.0
 margin_bottom = 36.0
@@ -665,7 +665,7 @@ size_flags_vertical = 4
 
 [node name="LabelPlayer" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel/VBoxContainer/HBoxContainer"]
 margin_top = 3.0
-margin_right = 173.0
+margin_right = 262.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_styles/normal = ExtResource( 10 )
@@ -686,7 +686,7 @@ text = "[RT]"
 align = 1
 
 [node name="LabelOpponent" type="Label" parent="Panel/VBoxContainer/HBoxAnswers2/Panel2/Panel/VBoxContainer/HBoxContainer"]
-margin_left = 354.0
+margin_left = 266.0
 margin_top = 3.0
 margin_right = 528.0
 margin_bottom = 36.0

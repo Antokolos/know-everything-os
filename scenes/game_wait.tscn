@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://styles/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/game_wait.gd" type="Script" id=2]
 [ext_resource path="res://styles/header_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://styles/button_normal.tres" type="StyleBox" id=4]
 [ext_resource path="res://styles/button_pressed.tres" type="StyleBox" id=5]
+[ext_resource path="res://sound/success.wav" type="AudioStream" id=6]
 
 [node name="game_wait" type="TextureRect"]
 anchor_right = 1.0
@@ -128,6 +129,10 @@ size_flags_vertical = 4
 text = "GAME_WAIT_BACK"
 
 [node name="StartTimer" type="Timer" parent="."]
+
+[node name="OpponentConnected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "Effects"
 [connection signal="pressed" from="VBoxContainer/HBoxActions/Invite" to="." method="_on_Invite_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxActions/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxActions/Ready" to="." method="_on_Ready_pressed"]

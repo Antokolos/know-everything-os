@@ -37,6 +37,7 @@ func _process(delta):
 			_on_lobby_data_update(true, godotsteam.steam_lobby_ID, opponent_ID)
 			opponent_info_node.text = godotsteam.opponent.name
 			message_node.text = tr("GAME_WAIT_CONNECTED")
+			$OpponentConnected.play()
 	elif godotsteam.has_packet_with_code(godotsteam.CODE_COUNTDOWN):
 		ready_button_node.disabled = true # It's a final countdown... :)
 		var counter = godotsteam.peek_packet_with_code(godotsteam.CODE_COUNTDOWN)

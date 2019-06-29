@@ -79,7 +79,7 @@ func abspath(relpath):
 	dir.open(".")
 	return dir.get_current_dir() + "/" + relpath
 
-func list_files_in_directory(path, extension):
+func list_files_in_directory(path, extension, recursive):
 	var files = []
 	
 	var dir = Directory.new()
@@ -93,10 +93,11 @@ func list_files_in_directory(path, extension):
 		if file == "":
 			break
 		elif not file.begins_with("."):
-			if file.ends_with(extension):
+			var is_dir = dir.current_is_dir()
+			if not is_dir and file.ends_with(extension):
 				files.append({"path": path, "file": file})
-			elif dir.current_is_dir():
-				var inner_files = list_files_in_directory(path + "/" + file, extension)
+			elif recursive and is_dir:
+				var inner_files = list_files_in_directory(path + "/" + file, extension, true)
 				if inner_files.size() == 0:
 					continue
 				for f in inner_files:

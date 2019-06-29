@@ -383,9 +383,17 @@ func assign_media(mediafile):
 		media_node.texture = null
 		media_panel_node.visible = false
 
-func find_media(language_code, quiz_id):
+func find_media_files(language_code, quiz_id, is_full):
 	var dirpath = game_params.abspath("media/quiz/" + str(quiz_id))
-	var mediafiles = game_params.list_files_in_directory(dirpath, "png")
+	if is_full:
+		var dirpath_full = dirpath + "/full/"
+		var mediafiles_full = game_params.list_files_in_directory(dirpath_full, "png", false)
+		if not mediafiles_full.empty():
+			return mediafiles_full
+	return game_params.list_files_in_directory(dirpath, "png", false)
+
+func find_media(language_code, quiz_id, is_full):
+	var mediafiles = find_media_files(language_code, quiz_id, is_full)
 	var lang_suffix = "_" + language_code + ".png"
 	var default_media = null
 	for mediafile in mediafiles:
@@ -515,7 +523,7 @@ func next_question_fill():
 	category_node.text = category_name
 	quiz_number_node.text = "%d / %d" % [current_quiz_idx + 1, quizzes.size()]
 	var language_code = quizzes[current_quiz_idx].language_code
-	assign_media(find_media(language_code, quiz_id))
+	assign_media(find_media(language_code, quiz_id, false))
 	quiz_node.text = "" if quiz_text_data.empty() else StringUtil.Decrypt(quiz_text_data[0].quiz_text)
 	var ai = 0
 	var is_multiselect = false
@@ -692,6 +700,9 @@ func _on_Confirm_pressed():
 	if has_human_opponent() and godotsteam.opponent:
 		godotsteam.send_quizanswer(godotsteam.opponent.steam_ID, answer_selection, get_correct_answer_reward())
 	
+	var quiz_id = quizzes[current_quiz_idx - 1].quiz_id
+	var language_code = quizzes[current_quiz_idx - 1].language_code
+	assign_media(find_media(language_code, quiz_id, true))
 	var has_errors = check_and_highlight_answers(false, answer_selection, true)
 	if game_params.answer_result_animation:
 		do_answer_result_animation()
