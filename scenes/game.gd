@@ -387,19 +387,20 @@ func find_media_files(language_code, quiz_id, is_full):
 	var dirpath = game_params.abspath("media/quiz/" + str(quiz_id))
 	if is_full:
 		var dirpath_full = dirpath + "/full/"
-		var mediafiles_full = game_params.list_files_in_directory(dirpath_full, "png", false)
+		var mediafiles_full = game_params.list_files_in_directory(dirpath_full, ["png", "svg"], false)
 		if not mediafiles_full.empty():
 			return mediafiles_full
-	return game_params.list_files_in_directory(dirpath, "png", false)
+	return game_params.list_files_in_directory(dirpath, ["png", "svg"], false)
 
 func find_media(language_code, quiz_id, is_full):
 	var mediafiles = find_media_files(language_code, quiz_id, is_full)
-	var lang_suffix = "_" + language_code + ".png"
+	var lang_suffix_template = "_" + language_code + ".%s"
+	var lang_suffix_template_default = "_en.%s"
 	var default_media = null
 	for mediafile in mediafiles:
-		if mediafile.file.ends_with(lang_suffix):
+		if game_params.ends_with_one_of(mediafile.file, lang_suffix_template, ["png", "svg"]):
 			return mediafile
-		if mediafile.file.ends_with("_en.png"):
+		if game_params.ends_with_one_of(mediafile.file, lang_suffix_template_default, ["png", "svg"]):
 			default_media = mediafile
 	return default_media
 
