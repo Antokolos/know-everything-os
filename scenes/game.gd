@@ -227,7 +227,7 @@ func _process(delta):
 				check_opponent_answer()
 				return
 		
-		if has_opponent():
+		if has_opponent() and opponent_ready:
 			var question_activated = current_quiz_question.empty()
 			if question_activated:
 				process_timer_changes(delta)
@@ -253,6 +253,9 @@ func _process(delta):
 				return
 		if has_human_opponent() and not opponent_ready:
 			opponent_ready = godotsteam.peek_packet_with_code(godotsteam.CODE_QUIZDATA_ACCEPTED)
+			# We'll continue to spam the opponent with CODE_QUIZDATA_ACCEPTED packets until he won't signal us back that he received it
+			var steamIDRemote = godotsteam.opponent.steam_ID
+			godotsteam.send_quizdata_accepted(steamIDRemote)
 			return
 		next_question()
 		return
@@ -261,7 +264,6 @@ func _process(delta):
 		# Waiting for quizzes array from lobby owner...
 		if godotsteam.has_packet_with_code(godotsteam.CODE_QUIZDATA):
 			quizzes = godotsteam.peek_packet_with_code(godotsteam.CODE_QUIZDATA)
-			opponent_ready = true
 			var steamIDRemote = godotsteam.opponent.steam_ID
 			godotsteam.send_quizdata_accepted(steamIDRemote)
 			append_session_row(quizzes.size())
